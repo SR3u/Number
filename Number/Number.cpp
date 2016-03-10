@@ -195,3 +195,7 @@ int Number::sign(void)const
     if(m>=0){return 1;}
     else{return -1;}
 }
+std::ostream& operator<<(std::ostream& os, const Number& dt)
+{
+    return os<<dt.toString();
+}

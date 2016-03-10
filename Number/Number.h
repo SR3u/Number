@@ -9,9 +9,11 @@
 #ifndef Number_h
 #define Number_h
 #include <string>
+#include <iostream>
 typedef std::string String;
 class Number
 {
+private:
     int64_t m;
     int64_t e;
 public:
@@ -57,6 +59,6 @@ public:
     static Number ONE;
     static Number PLUSINF;
     static Number MINUSINF;
-private:
+    friend std::ostream& operator<<(std::ostream& os, const Number& dt);
 };
 #endif /* Number_h */

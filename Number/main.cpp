@@ -14,6 +14,6 @@ int main(int argc, const char * argv[])
     Number n(0.1),m("100.9");
     m/=n;
     // insert code here...
-    std::cout <<(m).toString()<<"\n";
+    std::cout <<m<<"\n";
     return 0;
 }
