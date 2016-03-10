@@ -14,7 +14,6 @@ class Number
 {
     int64_t m;
     int64_t e;
-    bool nan=false;
 public:
     static String delimiter;
     

@@ -81,6 +81,7 @@ Number::Number(String num)
         }
     }
 }
+double Number::toDouble(void)const{return (double)m*pow(10,e);}
 void Number::trim()
 {
     if(m==0){return;}
