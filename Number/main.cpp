@@ -11,7 +11,7 @@
 
 int main(int argc, const char * argv[])
 {
-    Number n(.9),m("13");
-    std::cout <<(m%n)<<'\n';
+    Number n(3.14159265),m("13");
+    std::cout <<n<<'\n';
     return 0;
 }

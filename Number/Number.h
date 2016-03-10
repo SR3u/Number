@@ -21,7 +21,9 @@ public:
     
     Number(int64_t newValue=0);
     Number(int newValue);
+    Number(long double d);
     Number(double d);
+    Number(float d);
     Number(const Number& n);
     Number(const int64_t& M,const int64_t& E);
     Number(String num);

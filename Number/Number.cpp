@@ -31,6 +31,17 @@ Number::Number(int64_t newValue)
 Number::Number(const int64_t& M,const int64_t& E){m=M;e=E;trim();}
 Number::Number(double d)
 {
+    Number tmp((long double)d);
+    m=tmp.m;e=tmp.e;
+}
+Number::Number(float d)
+{
+    Number tmp((long double)d);
+    m=tmp.m;e=tmp.e;
+}
+
+Number::Number(long double d)
+{
     std::stringstream ss;
     ss<<d;
     Number n=Number(ss.str());
@@ -41,7 +52,6 @@ Number::Number(const Number& n){m=n.m;e=n.e;}
 String Number::toString(void) const
 {
     std::stringstream ss;
-    
     if(e<6)
     {
         if(e>=-4)
@@ -154,7 +164,7 @@ Number Number::operator/(const Number&n)const
     else
     {
         r.e=e-n.e;
-        Number tmp((double)m/n.m);
+        Number tmp((long double)m/n.m);
         r.e+=tmp.e;
         r.m=tmp.m;
     }
@@ -176,7 +186,10 @@ Number Number::operator-(const Number&n)const
 Number Number::operator%(const Number&n)const
 {
     Number tmp=((*this)/n);
+    std::cout<<tmp<<'\n';
+    std::cout<<(tmp-tmp.floor())<<'\n';
     tmp=(tmp-tmp.floor())*n;
+    std::cout<<tmp<<'\n';
     tmp.trim();
     return tmp;
 }
