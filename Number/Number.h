@@ -37,11 +37,13 @@ public:
     Number operator-(const Number&)const;
     Number operator*(const Number&)const;
     Number operator/(const Number&)const;
+    Number operator%(const Number&)const;
     
     Number operator+=(const Number&);
     Number operator-=(const Number&);
     Number operator*=(const Number&);
     Number operator/=(const Number&);
+    Number operator%=(const Number&);
     
     Number floor()const;
     Number ceiling()const;

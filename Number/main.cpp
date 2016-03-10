@@ -11,11 +11,7 @@
 
 int main(int argc, const char * argv[])
 {
-    Number n(0.1),m("100.09");
-    m++;
-    // insert code here...
-    std::cout <<++m<<"\n";
-    m--;
-    std::cout <<--m<<"\n";
+    Number n(.9),m("13");
+    std::cout <<(m%n)<<'\n';
     return 0;
 }

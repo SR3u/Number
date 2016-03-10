@@ -44,7 +44,7 @@ String Number::toString(void) const
     
     if(e<6)
     {
-        if(e>-4)
+        if(e>=-4)
         {
             ss<<m*pow(10,e);
         }
@@ -173,6 +173,13 @@ Number Number::operator-(const Number&n)const
 {
     return (*this)+(-n);
 }
+Number Number::operator%(const Number&n)const
+{
+    Number tmp=((*this)/n);
+    tmp=(tmp-tmp.floor())*n;
+    tmp.trim();
+    return tmp;
+}
 Number Number::operator-()const
 {
     Number res(*this);
@@ -207,6 +214,11 @@ Number Number::operator*=(const Number&n)
 Number Number::operator/=(const Number&n)
 {
     (*this)=(*this)/n;
+    return *this;
+}
+Number Number::operator%=(const Number&n)
+{
+    (*this)=(*this)%n;
     return *this;
 }
 int Number::sign(void)const
