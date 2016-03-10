@@ -13,6 +13,8 @@
 String Number::delimiter=".";
 Number Number::ZERO=Number(0);
 Number Number::ONE=Number(1);
+Number Number::PLUSINF=Number(INT64_MAX,INT64_MAX);
+Number Number::MINUSINF=-Number::PLUSINF;
 Number::~Number(void){}
 Number::Number(int newValue)
 {
@@ -123,10 +125,7 @@ Number Number::operator*(const Number&n)const
 }
 Number Number::operator/(const Number&n)const
 {
-    if(n==Number::ZERO)
-    {
-        return Number(INT64_MAX,INT64_MAX);
-    }
+    if(n==Number::ZERO){return PLUSINF*this->sign();}
     Number r;
     if(m%n.m==0)
     {
@@ -190,4 +189,9 @@ Number Number::operator/=(const Number&n)
 {
     (*this)=(*this)/n;
     return *this;
+}
+int Number::sign(void)const
+{
+    if(m>=0){return 1;}
+    else{return -1;}
 }

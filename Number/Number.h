@@ -47,6 +47,7 @@ public:
     bool operator>(const Number&) const;
     bool operator>=(const Number&) const;
     
+    int sign(void)const;
     void trim(void);
     
     String toString(void) const;
@@ -54,6 +55,8 @@ public:
     
     static Number ZERO;
     static Number ONE;
+    static Number PLUSINF;
+    static Number MINUSINF;
 private:
 };
 #endif /* Number_h */
