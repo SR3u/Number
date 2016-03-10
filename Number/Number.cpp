@@ -160,3 +160,13 @@ Number Number::operator-()const
     res.m=-res.m;
     return res;
 }
+Number Number::floor()const
+{
+    if(e>=0){return *this;}
+    return Number(this->m/pow(10,-this->e),0);
+}
+Number Number::ceiling()const
+{
+    if(e>=0){return this->floor();}
+    return this->floor()+1;
+}
