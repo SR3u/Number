@@ -142,3 +142,17 @@ Number Number::operator/(const Number&n)const
     r.trim();
     return r;
 }
+Number Number::operator+(const Number&n)const
+{
+    Number res;
+    res.e=e<n.e?e:n.e;
+    res.m=m*powl(10,e-res.e)+n.m*powl(10,n.e-res.e);
+    res.trim();
+    return res;
+}
+Number Number::operator-(const Number&n)const
+{
+    Number tmp(n);
+    tmp.m=-tmp.m;
+    return (*this)+tmp;
+}
