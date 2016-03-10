@@ -73,7 +73,7 @@ Number::Number(String num)
         else
         {
             R=R+D;
-            e=-D.length()-1;
+            e=-D.length();
             m=std::stoll(R);
         }
     }
@@ -108,6 +108,12 @@ bool Number::operator>(const Number&n) const
     return false;
 }
 bool Number::operator<=(const Number&n)const{return!((*this)>n);}
-bool Number::operator>=(const Number&n)const{
-    return!((*this)<n);
+bool Number::operator>=(const Number&n)const{return!((*this)<n);}
+Number Number::operator*(const Number&n)const
+{
+    Number r;
+    r.e=e+n.e;
+    r.m=m*n.m;
+    r.trim();
+    return r;
 }
