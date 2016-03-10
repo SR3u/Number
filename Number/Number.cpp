@@ -41,8 +41,27 @@ Number::Number(const Number& n){m=n.m;e=n.e;}
 String Number::toString(void) const
 {
     std::stringstream ss;
-    ss<<m;
-    if(e!=0){ss<<"e"<<e;}
+    
+    if(e<6)
+    {
+        if(e>-4)
+        {
+            ss<<m*pow(10,e);
+        }
+        else
+        {
+            ss<<m;
+            ss<<'e'<<e;
+        }
+    }
+    else
+    {
+        ss<<m;
+        for(int i=0;i<e;i++)
+        {
+            ss<<0;
+        }
+    }
     return ss.str();
 }
 Number::Number(String num)
@@ -194,6 +213,28 @@ int Number::sign(void)const
 {
     if(m>=0){return 1;}
     else{return -1;}
+}
+Number& Number::operator--()
+{
+    (*this)=(*this-ONE);
+    return *this;
+}
+Number& Number::operator++()
+{
+    (*this)=(*this+ONE);
+    return *this;
+}
+Number Number::operator--(int)
+{
+    Number result(*this);
+    --(*this);
+    return result;
+}
+Number Number::operator++(int)
+{
+    Number result(*this);
+    ++(*this);
+    return result;
 }
 std::ostream& operator<<(std::ostream& os, const Number& dt)
 {

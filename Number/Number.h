@@ -28,6 +28,10 @@ public:
     virtual ~Number(void);
     
     Number operator-()const;
+    Number& operator--();
+    Number& operator++();
+    Number operator--(int);
+    Number operator++(int);
     
     Number operator+(const Number&)const;
     Number operator-(const Number&)const;
