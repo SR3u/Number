@@ -152,7 +152,11 @@ Number Number::operator+(const Number&n)const
 }
 Number Number::operator-(const Number&n)const
 {
-    Number tmp(n);
-    tmp.m=-tmp.m;
-    return (*this)+tmp;
+    return (*this)+(-n);
+}
+Number Number::operator-()const
+{
+    Number res(*this);
+    res.m=-res.m;
+    return res;
 }

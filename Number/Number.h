@@ -26,6 +26,8 @@ public:
     Number(String num);
     virtual ~Number(void);
     
+    Number operator-()const;
+    
     Number operator+(const Number&)const;
     Number operator-(const Number&)const;
     Number operator*(const Number&)const;
