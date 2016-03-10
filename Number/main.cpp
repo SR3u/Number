@@ -11,8 +11,9 @@
 
 int main(int argc, const char * argv[])
 {
-    Number n(0.1),m("100.999919");
+    Number n(0.1),m("100.9");
+    m/=n;
     // insert code here...
-    std::cout <<(m.ceiling()).toString()<<"\n";
+    std::cout <<(m).toString()<<"\n";
     return 0;
 }

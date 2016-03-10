@@ -170,3 +170,23 @@ Number Number::ceiling()const
     if(e>=0){return this->floor();}
     return this->floor()+1;
 }
+Number Number::operator+=(const Number&n)
+{
+    (*this)=(*this)+n;
+    return *this;
+}
+Number Number::operator-=(const Number&n)
+{
+    (*this)=(*this)-n;
+    return *this;
+}
+Number Number::operator*=(const Number&n)
+{
+    (*this)=(*this)*n;
+    return *this;
+}
+Number Number::operator/=(const Number&n)
+{
+    (*this)=(*this)/n;
+    return *this;
+}
