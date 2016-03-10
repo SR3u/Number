@@ -7,9 +7,12 @@
 //
 
 #include <iostream>
+#include "Number.h"
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char * argv[])
+{
+    Number n;
     // insert code here...
-    std::cout << "Hello, World!\n";
+    std::cout << n.toString()<<"\n";
     return 0;
 }
