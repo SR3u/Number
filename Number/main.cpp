@@ -11,8 +11,8 @@
 
 int main(int argc, const char * argv[])
 {
-    Number n;
+    Number n(0.003),m(0.002);
     // insert code here...
-    std::cout << n.toString()<<"\n";
+    std::cout <<(n>=m)<<"\n";
     return 0;
 }
