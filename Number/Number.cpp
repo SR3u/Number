@@ -9,7 +9,10 @@
 #include <math.h>
 #include <sstream>
 #include <float.h>
+#include <iostream>
 String Number::delimiter=".";
+Number Number::ZERO=Number(0);
+Number Number::ONE=Number(1);
 Number::~Number(void){}
 Number::Number(int newValue)
 {
@@ -114,6 +117,28 @@ Number Number::operator*(const Number&n)const
     Number r;
     r.e=e+n.e;
     r.m=m*n.m;
+    r.trim();
+    return r;
+}
+Number Number::operator/(const Number&n)const
+{
+    if(n==Number::ZERO)
+    {
+        return Number(INT64_MAX,INT64_MAX);
+    }
+    Number r;
+    if(m%n.m==0)
+    {
+        r.e=e-n.e;
+        r.m=m/n.m;
+    }
+    else
+    {
+        r.e=e-n.e;
+        Number tmp((double)m/n.m);
+        r.e+=tmp.e;
+        r.m=tmp.m;
+    }
     r.trim();
     return r;
 }

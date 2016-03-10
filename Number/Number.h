@@ -14,6 +14,7 @@ class Number
 {
     int64_t m;
     int64_t e;
+    bool nan=false;
 public:
     static String delimiter;
     
@@ -49,6 +50,9 @@ public:
     
     String toString(void) const;
     double toDouble(void) const;
+    
+    static Number ZERO;
+    static Number ONE;
 private:
 };
 #endif /* Number_h */
